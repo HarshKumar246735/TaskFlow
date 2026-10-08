@@ -1,0 +1,1 @@
+import {Router} from 'express';import {protect} from '../middleware/authMiddleware.js';import * as c from '../controllers/categoryController.js';const r=Router();r.use(protect);r.get('/',c.list);r.post('/',c.create);r.get('/:id',c.getOne);r.put('/:id',c.update);r.delete('/:id',c.remove);export default r;

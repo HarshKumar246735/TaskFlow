@@ -1,0 +1,1 @@
+import mongoose from 'mongoose';const schema=new mongoose.Schema({user:{type:mongoose.Schema.Types.ObjectId,ref:'User',index:true},action:String,entityType:String,entityId:mongoose.Schema.Types.ObjectId,description:String},{timestamps:{createdAt:true,updatedAt:false}});export default mongoose.model('Activity',schema);

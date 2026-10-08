@@ -1,0 +1,1 @@
+import api from './api'; export const getStats=()=>api.get('/dashboard/stats'); export const getProductivity=()=>api.get('/dashboard/productivity');

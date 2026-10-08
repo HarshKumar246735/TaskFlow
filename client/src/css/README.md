@@ -1,0 +1,1 @@
+CSS is centralized under src/css/global.css for this compact starter. The architecture is intentionally componentized; split files can be introduced per module without changing imports.

@@ -1,0 +1,1 @@
+export function errorHandler(err,req,res,next){console.error(err.message);const code=err.statusCode||500;res.status(code).json({success:false,message:code===500?'Something went wrong':err.message})}

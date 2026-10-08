@@ -1,0 +1,854 @@
+/* =========================================
+   TOPBAR
+========================================= */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 0 28px;
+
+  background: #ffffff;
+  border-bottom: 1px solid #e8eaf0;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+.mobile-menu-button {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e5e7ef;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #475569;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.mobile-menu-button:hover {
+  background: #f5f3ff;
+  color: #6941d9;
+  border-color: #ddd5ff;
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.topbar-search {
+  flex: 1;
+
+  max-width: 620px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 0 16px;
+
+  background: #f7f8fc;
+
+  border: 1px solid #e4e7ef;
+  border-radius: 12px;
+
+  color: #64748b;
+
+  box-sizing: border-box;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.topbar-search:focus-within {
+  background: #ffffff;
+
+  border-color: #8b5cf6;
+
+  box-shadow:
+    0 0 0 3px rgba(124, 58, 237, 0.08);
+}
+
+.topbar-search svg {
+  flex-shrink: 0;
+  color: #334155;
+}
+
+.topbar-search input {
+  flex: 1;
+
+  min-width: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #172033;
+
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.topbar-search input::placeholder {
+  color: #7b879c;
+}
+
+.search-shortcut {
+  flex-shrink: 0;
+
+  padding: 5px 8px;
+
+  border: 1px solid #e1e4eb;
+  border-radius: 6px;
+
+  background: #ffffff;
+
+  color: #718096;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   RIGHT ACTIONS
+========================================= */
+
+.topbar-actions {
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================
+   NEW TASK BUTTON
+========================================= */
+
+.topbar-new-task {
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 11px;
+
+  background: #7047dc;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 14px rgba(112, 71, 220, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.topbar-new-task:hover {
+  background: #6036cb;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 7px 18px rgba(112, 71, 220, 0.25);
+}
+
+.topbar-new-task:active {
+  transform: translateY(0);
+}
+
+.topbar-new-task span {
+  font-size: 23px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+
+/* =========================================
+   ICON BUTTON
+========================================= */
+
+.notification-wrapper {
+  position: relative;
+}
+
+.topbar-icon-button {
+  position: relative;
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 10px;
+
+  background: transparent;
+
+  color: #475569;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.topbar-icon-button:hover {
+  background: #f5f3ff;
+  color: #7047dc;
+}
+
+
+/* =========================================
+   NOTIFICATION DOT
+========================================= */
+
+.notification-dot {
+  position: absolute;
+
+  top: 9px;
+  right: 9px;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #7047dc;
+
+  border: 2px solid #ffffff;
+}
+
+
+/* =========================================
+   TOPBAR DIVIDER
+========================================= */
+
+.topbar-divider {
+  width: 1px;
+  height: 32px;
+
+  margin: 0 2px;
+
+  background: #e5e7eb;
+}
+
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.profile-wrapper {
+  position: relative;
+}
+
+.profile-button {
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 4px 7px 4px 4px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease;
+}
+
+.profile-button:hover {
+  background: #f7f7fb;
+}
+
+
+/* =========================================
+   PROFILE AVATAR
+========================================= */
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #7047dc;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.profile-avatar.large {
+  width: 46px;
+  height: 46px;
+
+  font-size: 16px;
+}
+
+
+/* =========================================
+   PROFILE INFO
+========================================= */
+
+.profile-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: center;
+
+  gap: 2px;
+}
+
+.profile-name {
+  max-width: 125px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: #172033;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.profile-role {
+  color: #7a8498;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.profile-chevron {
+  color: #64748b;
+
+  transition: transform 0.2s ease;
+}
+
+.profile-chevron.rotate {
+  transform: rotate(180deg);
+}
+
+
+/* =========================================
+   PROFILE DROPDOWN
+========================================= */
+
+.profile-dropdown {
+  position: absolute;
+
+  top: calc(100% + 10px);
+  right: 0;
+
+  width: 245px;
+
+  padding: 8px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+
+  box-shadow:
+    0 16px 40px rgba(15, 23, 42, 0.12);
+
+  animation: dropdownIn 0.18s ease;
+}
+
+@keyframes dropdownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-dropdown-header {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 10px 8px 12px;
+}
+
+.profile-dropdown-header > div:last-child {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.profile-dropdown-header strong {
+  color: #172033;
+
+  font-size: 14px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profile-dropdown-header span {
+  color: #7a8498;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   DROPDOWN DIVIDER
+========================================= */
+
+.dropdown-divider {
+  height: 1px;
+
+  margin: 5px 4px;
+
+  background: #edf0f4;
+}
+
+
+/* =========================================
+   PROFILE MENU ITEMS
+========================================= */
+
+.profile-menu-item {
+  width: 100%;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 0 10px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: #475569;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.profile-menu-item:hover {
+  background: #f6f4ff;
+  color: #7047dc;
+}
+
+.profile-menu-item.logout {
+  color: #dc4c64;
+}
+
+.profile-menu-item.logout:hover {
+  background: #fff1f2;
+  color: #c93650;
+}
+
+
+/* =========================================
+   NOTIFICATION DROPDOWN
+========================================= */
+
+.notification-dropdown {
+  position: absolute;
+
+  top: calc(100% + 10px);
+  right: -85px;
+
+  width: 350px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+
+  box-shadow:
+    0 16px 40px rgba(15, 23, 42, 0.12);
+
+  animation: dropdownIn 0.18s ease;
+}
+
+.dropdown-header {
+  padding: 17px 18px;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.dropdown-header h3 {
+  margin: 0 0 4px;
+
+  color: #172033;
+
+  font-size: 15px;
+}
+
+.dropdown-header span {
+  color: #7a8498;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   NOTIFICATION ITEM
+========================================= */
+
+.notification-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  padding: 15px 18px;
+
+  border-bottom: 1px solid #f0f1f4;
+
+  transition:
+    background 0.2s ease;
+}
+
+.notification-item:hover {
+  background: #fafaff;
+}
+
+.notification-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.notification-icon.task {
+  background: #eee9ff;
+  color: #7047dc;
+}
+
+.notification-icon.reminder {
+  background: #fff4df;
+  color: #c47a00;
+}
+
+.notification-item strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #172033;
+
+  font-size: 13px;
+}
+
+.notification-item p {
+  margin: 0 0 5px;
+
+  color: #6b778c;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.notification-item small {
+  color: #9aa3b2;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   VIEW ALL
+========================================= */
+
+.view-all-notifications {
+  width: 100%;
+
+  padding: 13px 16px;
+
+  border: none;
+
+  background: #ffffff;
+
+  color: #7047dc;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease;
+}
+
+.view-all-notifications:hover {
+  background: #f7f5ff;
+}
+
+
+/* =========================================
+   RESPONSIVE - 1100px
+========================================= */
+
+@media (max-width: 1100px) {
+  .topbar {
+    padding: 0 20px;
+  }
+
+  .topbar-search {
+    max-width: 500px;
+  }
+
+  .profile-info {
+    display: none;
+  }
+
+  .profile-button {
+    padding-right: 3px;
+  }
+}
+
+
+/* =========================================
+   RESPONSIVE - 900px
+========================================= */
+
+@media (max-width: 900px) {
+  .topbar {
+    height: 68px;
+
+    padding: 0 18px;
+
+    gap: 12px;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+  }
+
+  .topbar-search {
+    height: 44px;
+
+    max-width: none;
+
+    padding: 0 13px;
+  }
+
+  .topbar-search input {
+    font-size: 14px;
+  }
+
+  .topbar-new-task {
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    border-radius: 10px;
+  }
+
+  .topbar-new-task strong {
+    display: none;
+  }
+
+  .topbar-new-task span {
+    font-size: 24px;
+  }
+
+  .topbar-divider {
+    display: none;
+  }
+}
+
+
+/* =========================================
+   RESPONSIVE - 650px
+========================================= */
+
+@media (max-width: 650px) {
+  .topbar {
+    padding: 0 12px;
+
+    gap: 8px;
+  }
+
+  .topbar-search {
+    flex: 1;
+  }
+
+  .search-shortcut {
+    display: none;
+  }
+
+  .topbar-actions {
+    gap: 4px;
+  }
+
+  .topbar-icon-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .profile-button {
+    height: 44px;
+  }
+
+  .profile-avatar {
+    width: 36px;
+    height: 36px;
+
+    font-size: 13px;
+  }
+
+  .notification-dropdown {
+    position: fixed;
+
+    top: 70px;
+    left: 12px;
+    right: 12px;
+
+    width: auto;
+  }
+
+  .profile-dropdown {
+    right: 0;
+
+    width: 230px;
+  }
+}
+
+
+/* =========================================
+   RESPONSIVE - 450px
+========================================= */
+
+@media (max-width: 450px) {
+  .topbar {
+    height: 64px;
+  }
+
+  .mobile-menu-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .topbar-search {
+    height: 40px;
+
+    gap: 8px;
+
+    padding: 0 10px;
+  }
+
+  .topbar-search svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .topbar-search input {
+    font-size: 13px;
+  }
+
+  .topbar-new-task {
+    width: 38px;
+    height: 38px;
+  }
+
+  .topbar-icon-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .profile-avatar {
+    width: 34px;
+    height: 34px;
+  }
+}

@@ -1,0 +1,1 @@
+import {Router} from 'express';import {protect} from '../middleware/authMiddleware.js';import * as c from '../controllers/userController.js';const r=Router();r.use(protect);r.get('/me',c.getMe);r.put('/me',c.updateMe);r.put('/password',c.changePassword);export default r;

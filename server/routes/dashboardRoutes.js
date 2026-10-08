@@ -1,0 +1,1 @@
+import {Router} from 'express';import {protect} from '../middleware/authMiddleware.js';import * as c from '../controllers/dashboardController.js';const r=Router();r.use(protect);r.get('/stats',c.stats);r.get('/productivity',c.productivity);export default r;
